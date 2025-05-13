@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add player</title>
+</head>
+
+<body>
+	<h1>Add player</h1>
+
+	<form method="post" action="{{ url_for('add_player') }}">
+		<label>name</label>
+		<input type="text" name="name"><br>
+		<label>clubname</label>
+		<input type="text" name="clubname"><br>
+		<label>goals:</label>
+		<input type="number" name="goals"><br>
+		<label>nation:</label>
+		<input type="text" name="nation"><br>
+		<label>age:</label>
+		<input type="number" name="age"><br>
+		<label>position:</label>
+		<input type="text" name="position"><br>
+		<label>number</label>
+		<input type="number" name="number"><br>
+		<input type="submit" value="Add">
+		<a href="{{ url_for('player') }}">cancel</a>
+	</form>
+</body>
+
+</html>

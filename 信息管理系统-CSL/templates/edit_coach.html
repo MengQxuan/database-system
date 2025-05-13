@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Coach</title>
+</head>
+
+<body>
+    <h1>Edit Coach</h1>
+    <div>
+        <form action="{{ url_for('edit_coach', coachname=coach[0]) }}" method="POST">
+            <label for="coachname">coachname:</label>
+            <input type="text" id="coachname" name="coachname" value={{coach[0]}}><br>
+            <label for="clubname">clubname:</label>
+            <input type="text" id="clubname" name="clubname" value={{coach[1]}}><br>
+            <label for="coachnation">coachnation:</label>
+            <input type="text" id="coachnation" name="coachnation" value={{coach[2]}}><br>
+            <label for="coachage">coachage:</label>
+            <input type="number" id="coachage" name="coachage" value={{coach[3]}}><br>
+
+            <input type="submit" value="Save">
+            <a href="{{ url_for('coach') }}">cancel</a>
+
+        </form>
+    </div>
+</body>
+
+</html>

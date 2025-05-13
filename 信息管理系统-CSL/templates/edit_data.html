@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit data</title>
+</head>
+
+<body>
+	<h1>Edit data</h1>
+	<form method="post" action="{{ url_for('edit_data', goals=data[0]) }}">
+
+		<label>goals:</label>
+		<input type="number" name="goals" value="{{ data[0] }}"><br>
+		<label>assists:</label>
+		<input type="number" name="assists" value="{{ data[1] }}"><br>
+		<label>yellowcard:</label>
+		<input type="number" name="yellowcard" value="{{ data[2] }}"><br>
+		<label>redcard:</label>
+		<input type="number" name="redcard" value="{{ data[3] }}"><br>
+
+		<input type="submit" value="Save">
+		<a href="{{ url_for('data') }}">cancel</a>
+	</form>
+</body>
+
+</html>

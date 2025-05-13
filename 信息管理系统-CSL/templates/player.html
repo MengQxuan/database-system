@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Player List</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #f4f4f9;
+			color: #333;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			padding: 10px;
+			text-align: center;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+
+		tr:hover {
+			background-color: #f1f1f1;
+		}
+
+		a.button {
+			text-decoration: none;
+			color: white;
+			background-color: #007bff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			display: inline-block;
+			transition: background-color 0.3s ease;
+		}
+
+		a.button:hover {
+			background-color: #0056b3;
+		}
+
+		li {
+			list-style: none;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		li a {
+			text-decoration: none;
+			color: #007bff;
+		}
+
+		li a:hover {
+			text-decoration: underline;
+		}
+
+		.center {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Player List</h1>
+
+		<div class="center">
+			<a href="/player/add" class="button">Add Player</a>
+		</div>
+
+		<table>
+			<tr>
+				<th>name</th>
+				<th>clubname</th>
+				<th>goals</th>
+				<th>nation</th>
+				<th>age</th>
+				<th>position</th>
+				<th>number</th>
+				<th>edit</th>
+				<th>delete</th>
+			</tr>
+
+			{% for player in players %}
+			<tr>
+				<td>{{ player[0] }}</td>
+				<td>{{ player[1] }}</td>
+				<td>{{ player[2] }}</td>
+				<td>{{ player[3] }}</td>
+				<td>{{ player[4] }}</td>
+				<td>{{ player[5] }}</td>
+				<td>{{ player[6] }}</td>
+
+				<td><a href="{{ url_for('edit_player', name=player[0]) }}">Edit</a></td>
+				<td><a href="{{ url_for('delete_player', name=player[0]) }}">Delete</a></td>
+				<td><a href="{{url_for('sel',name=player[0])}}">View</a></td>
+			</tr>
+			{% endfor %}
+
+		</table>
+
+		<li><a href="{{ url_for('index') }}">首页</a></li>
+	</div>
+
+</body>
+
+</html>

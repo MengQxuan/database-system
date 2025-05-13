@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit player</title>
+</head>
+
+<body>
+	<h1>Edit player</h1>
+
+	<form method="post" action="{{ url_for('edit_player', name=player[0]) }}">
+		<label for="name">name:</label>
+		<input type="text" name="name" value="{{ player[0] }}"><br>
+		<label>clubname:</label>
+		<input type="text" name="clubname" value="{{ player[1] }}"><br>
+		<label>goals:</label>
+		<input type="number" name="goals" value="{{ player[2] }}"><br>
+		<label>nation:</label>
+		<input type="text" name="nation" value="{{ player[3] }}"><br>
+		<label>age:</label>
+		<input type="number" name="age" value="{{ player[4] }}"><br>
+		<label>position:</label>
+		<input type="text" name="position" value="{{ player[5] }}"><br>
+		<label for="number">number:</label>
+		<input type="number" name="number" value="{{ player[6] }}"><br>
+
+		<input type="submit" value="Save">
+		<a href="{{ url_for('player') }}">cancel</a>
+	</form>
+</body>
+
+</html>

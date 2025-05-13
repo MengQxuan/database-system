@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add data</title>
+</head>
+
+<body>
+	<h1>Add data</h1>
+	<form method="post" action="{{ url_for('add_data') }}">
+		<label>goals:</label>
+		<input type="number" name="goals"><br>
+		<label>assists:</label>
+		<input type="number" name="assists"><br>
+		<label>yellowcard:</label>
+		<input type="number" name="yellowcard"><br>
+		<label>redcard:</label>
+		<input type="number" name="redcard"><br>
+		<input type="submit" value="Add">
+		<a href="{{ url_for('data') }}">cancel</a>
+	</form>
+</body>
+
+</html>

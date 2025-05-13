@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Player Details</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+		}
+
+		.container {
+			width: 80%;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f9f9f9;
+		}
+
+		tr:hover {
+			background-color: #f2f2f2;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		.button {
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			text-decoration: none;
+			cursor: pointer;
+			display: inline-block;
+			/* 将按钮转换为块级元素 */
+			margin-top: 10px;
+			/* 将按钮下移 */
+		}
+
+		.button:hover {
+			background-color: #0056b3;
+		}
+
+		a {
+			text-decoration: none;
+			color: #007bff;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>Player Details</h1>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Club Name</th>
+				<th>Coach Name</th>
+				<th>Goals</th>
+				<th>Nation</th>
+				<th>Age</th>
+				<th>Position</th>
+				<th>Number</th>
+				<th>Assists</th>
+				<th>Yellow Card</th>
+				<th>Red Card</th>
+			</tr>
+			{% for item in data %}
+			<tr>
+				<td>{{ item[0] }}</td>
+				<td>{{ item[1] }}</td>
+				<td>{{ item[2] }}</td>
+				<td>{{ item[3] }}</td>
+				<td>{{ item[4] }}</td>
+				<td>{{ item[5] }}</td>
+				<td>{{ item[6] }}</td>
+				<td>{{ item[7] }}</td>
+				<td>{{ item[8] }}</td>
+				<td>{{ item[9] }}</td>
+				<td>{{ item[10] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		<div> <!-- 将按钮放入一个 div 元素中 -->
+			<a href="{{ url_for('player') }}" class="button">Return</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

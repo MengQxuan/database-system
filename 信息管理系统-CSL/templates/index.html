@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>中超联赛</title>
+	<link rel="icon" href="static/image/csl.ico" type="image/x-icon">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #f4f4f9;
+			color: #333;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		h1 a {
+			color: #000;
+			text-decoration: none;
+		}
+
+		h1 a:hover {
+			color: #ff5900;
+			text-decoration: underline;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+		}
+
+		.logo {
+			display: block;
+			margin: 20px auto;
+			max-width: 100%;
+			height: auto;
+		}
+
+		p {
+			font-size: 1.2em;
+			text-align: center;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		ul li {
+			margin: 10px;
+		}
+
+		ul li a {
+			text-decoration: none;
+			color: white;
+			background-color: #007bff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		ul li a:hover {
+			background-color: #0056b3;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>
+			<a
+				href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E8%B6%B3%E7%90%83%E5%8D%8F%E4%BC%9A%E8%B6%85%E7%BA%A7%E8%81%94%E8%B5%9B/3715729">中国足球协会超级联赛</a>
+		</h1>
+
+		<img src="{{ url_for('static', filename='image/csl.png') }}" alt="足球" class="logo">
+
+		<ul>
+			<li><a href="{{ url_for('club') }}">俱乐部</a></li>
+			<li><a href="{{ url_for('data') }}">数据</a></li>
+			<li><a href="{{ url_for('coach') }}">教练</a></li>
+			<li><a href="{{ url_for('player') }}">运动员</a></li>
+		</ul>
+	</div>
+</body>
+
+</html>

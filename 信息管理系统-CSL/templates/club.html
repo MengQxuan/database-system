@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>club List</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #f4f4f9;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		.actions {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.actions a {
+			text-decoration: none;
+			color: white;
+			background-color: #007bff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			margin: 5px;
+			display: inline-block;
+		}
+
+		.actions a:hover {
+			background-color: #0056b3;
+		}
+
+		.image-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin-bottom: 20px;
+		}
+
+		.image-container img {
+			width: 50px;
+			height: 57px;
+			margin: 5px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid #ddd;
+		}
+
+		th,
+		td {
+			padding: 10px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f9f9f9;
+		}
+
+		tr:hover {
+			background-color: #f1f1f1;
+		}
+
+		.footer {
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Club List</h1>
+	<div class="actions">
+		<a href="/club/add">Add club</a>
+	</div>
+	<div class="image-container">
+		<img src="{{ url_for('static', filename='image/sdts.png') }}" alt="山东泰山">
+		<img src="{{ url_for('static', filename='image/shhg.png') }}" alt="上海海港">
+		<img src="{{ url_for('static', filename='image/shsh.png') }}" alt="上海申花">
+		<img src="{{ url_for('static', filename='image/zj.png') }}" alt="浙江队">
+		<img src="{{ url_for('static', filename='image/cdrc.png') }}" alt="成都蓉城">
+		<img src="{{ url_for('static', filename='image/bjga.png') }}" alt="北京国安">
+		<img src="{{ url_for('static', filename='image/hn.png') }}" alt="河南队">
+		<img src="{{ url_for('static', filename='image/tjjmh.png') }}" alt="天津津门虎">
+		<img src="{{ url_for('static', filename='image/whsz.png') }}" alt="武汉三镇">
+		<img src="{{ url_for('static', filename='image/czxs.png') }}" alt="沧州雄狮">
+		<img src="{{ url_for('static', filename='image/mzkj.png') }}" alt="梅州客家">
+		<img src="{{ url_for('static', filename='image/ccyt.png') }}" alt="长春亚泰">
+		<img src="{{ url_for('static', filename='image/qdxha.png') }}" alt="青岛西海岸">
+		<img src="{{ url_for('static', filename='image/ntzy.png') }}" alt="南通支云">
+		<img src="{{ url_for('static', filename='image/szxpc.png') }}" alt="深圳新鹏城">
+		<img src="{{ url_for('static', filename='image/qdhn.png') }}" alt="青岛海牛">
+	</div>
+	<table>
+		<tr>
+			<th>clubname</th>
+			<th>coachname</th>
+			<th>city</th>
+			<th>homecourt</th>
+			<th>edit</th>
+			<th>delete</th>
+		</tr>
+		{% for club in clubs %}
+		<tr>
+			<td>{{ club[0] }}</td>
+			<td>{{ club[1] }}</td>
+			<td>{{ club[2] }}</td>
+			<td>{{ club[3] }}</td>
+
+			<td><a href="{{ url_for('edit_club', clubname=club[0]) }}">Edit</a></td>
+			<td><a href="{{ url_for('delete_club', clubname=club[0]) }}">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	<div class="footer">
+		<a href="{{ url_for('index') }}">首页</a>
+	</div>
+</body>
+
+</html>

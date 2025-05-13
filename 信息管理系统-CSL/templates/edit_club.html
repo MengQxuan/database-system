@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit club</title>
+</head>
+
+<body>
+	<h1>Edit club</h1>
+
+	<form method="post" action="{{ url_for('edit_club', clubname=club[0]) }}">
+		<label>clubname:</label>
+		<input type="text" name="clubname" value="{{ club[0] }}"><br>
+		<label>coachname:</label>
+		<input type="text" name="coachname" value="{{ club[1] }}"><br>
+		<label>city:</label>
+		<input type="text" name="city" value="{{ club[2] }}"><br>
+		<label>homecourt:</label>
+		<input type="text" name="homecourt" value="{{ club[3] }}"><br>
+		<input type="submit" value="Save">
+		<a href="{{ url_for('club') }}">cancel</a>
+	</form>
+</body>
+
+</html>

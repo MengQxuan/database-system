@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add club</title>
+</head>
+
+<body>
+	<h1>Add club</h1>
+
+	<form method="POST" action="{{ url_for('add_club') }}">
+		<label>clubname:</label>
+		<input type="text" name="clubname"><br>
+		<label>coachname:</label>
+		<input type="text" name="coachname"><br>
+		<label>city:</label>
+		<input type="text" name="city"><br>
+		<label>homecourt:</label>
+		<input type="text" name="homecourt"><br>
+
+		<input type="submit" value="Add">
+		<a href="{{ url_for('club') }}">Cancel</a>
+	</form>
+</body>
+
+</html>
